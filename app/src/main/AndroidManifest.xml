@@ -14,6 +14,15 @@
         android:theme="@style/Theme.ProyectoFinal"
         tools:targetApi="31">
         <activity
+            android:name=".Retrofit"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerView"
+            android:exported="false" />
+        <activity
+            android:name=".AdivinaNunero"
+            android:exported="false" />
+        <activity
             android:name=".TablasDeMultiplicar"
             android:exported="false" />
         <activity
