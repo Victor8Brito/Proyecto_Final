@@ -2,12 +2,12 @@ package com.example.proyectofinal
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proyectofinal.databinding.ActivityMainBinding
+import com.example.proyectofinal.databinding.ActivityRetrofitBinding
 import com.example.proyectofinal.retrofit.APIService
 import com.example.proyectofinal.retrofit.DogAdapter
 import com.example.proyectofinal.retrofit.DogResponse
@@ -20,22 +20,22 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class Retrofit : AppCompatActivity(), SearchView.OnQueryTextListener {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityRetrofitBinding
     private lateinit var adapter: DogAdapter
     private val dogImage = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityRetrofitBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.SearchDog.setOnQueryTextlistener(this)
+        binding.SearchDog.setOnQueryTextListener(this)
         initRecyclerView()
     }
 
     private fun initRecyclerView() {
         adapter = DogAdapter(dogImage)
         binding.rvDog.layoutManager = LinearLayoutManager(this)
-        binding.rvdog.adapter = adapter
+        binding.rvDog.adapter = adapter
 
     }
 
