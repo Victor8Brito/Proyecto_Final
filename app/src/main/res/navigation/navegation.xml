@@ -2,4 +2,36 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navegation" />
+    android:id="@+id/navegation"
+    app:startDestination="@id/pantalla_principal">
+    <fragment
+        android:id="@+id/pantalla_principal"
+        android:name="com.example.proyectofinal.Pantalla_principal"
+        android:label="activity_pantalla_principal"
+        tools:layout="@layout/activity_pantalla_principal" >
+        <action
+            android:id="@+id/action_pantalla_principal_to_adivinaNunero"
+            app:destination="@id/adivinaNunero" />
+    </fragment>
+    <fragment
+        android:id="@+id/adivinaNunero"
+        android:name="com.example.proyectofinal.AdivinaNunero"
+        android:label="activity_adivina_nunero"
+        tools:layout="@layout/activity_adivina_nunero" >
+        <action
+            android:id="@+id/action_adivinaNunero_to_pantalla_principal"
+            app:destination="@id/pantalla_principal" />
+        <action
+            android:id="@+id/action_adivinaNunero_to_juego"
+            app:destination="@id/juego" />
+    </fragment>
+    <fragment
+        android:id="@+id/juego"
+        android:name="com.example.proyectofinal.adivinar.Juego"
+        android:label="activity_juego"
+        tools:layout="@layout/activity_juego" >
+        <action
+            android:id="@+id/action_juego_to_adivinaNunero"
+            app:destination="@id/adivinaNunero" />
+    </fragment>
+</navigation>

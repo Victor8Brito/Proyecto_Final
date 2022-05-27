@@ -6,7 +6,6 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.proyectofinal.databinding.ActivityMainBinding
 import com.example.proyectofinal.databinding.ActivityRetrofitBinding
 import com.example.proyectofinal.retrofit.APIService
 import com.example.proyectofinal.retrofit.DogAdapter

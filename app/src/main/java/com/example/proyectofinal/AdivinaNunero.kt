@@ -3,19 +3,31 @@ package com.example.proyectofinal
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.proyectofinal.adivinar.Juego
 
-class AdivinaNunero : AppCompatActivity() {
+class AdivinaNunero : Fragment() {
     lateinit var b_iniciar: Button
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_adivina_nunero)
-
-        b_iniciar = findViewById(R.id.b_inicio)
+    lateinit var b_home1:Button
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val vista = inflater.inflate(R.layout.activity_adivina_nunero, container, false)
+        b_iniciar = vista.findViewById(R.id.b_inicio)
         b_iniciar.setOnClickListener {
-            val AbrirJuego = Intent(this,Juego::class.java)
-            startActivity(AbrirJuego)
+            findNavController().navigate(R.id.action_adivinaNunero_to_juego)
         }
+
+        b_home1 = vista.findViewById(R.id.btnHome1)
+        b_home1.setOnClickListener {
+            findNavController().navigate(R.id.action_adivinaNunero_to_pantalla_principal)
+        }
+        return vista
     }
 }
