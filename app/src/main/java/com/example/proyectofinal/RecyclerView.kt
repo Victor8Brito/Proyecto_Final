@@ -11,6 +11,8 @@ import com.android.volley.toolbox.Volley
 import com.example.proyectofinal.rickandmorty.AdaptadorPersonaje
 import com.example.proyectofinal.rickandmorty.Personaje
 
+//rickandmorty
+
 class RecyclerView : AppCompatActivity() {
     lateinit var miRecyclerView: RecyclerView
     val listPersonajes = ArrayList<Personaje>()
@@ -19,15 +21,14 @@ class RecyclerView : AppCompatActivity() {
         setContentView(R.layout.activity_recycler_view)
         miRecyclerView = findViewById(R.id.RecyclerPersonajes)
         miRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
-        getPersonajes()
+        getPersonaje()
     }
 
-    fun getPersonajes(){
+    fun getPersonaje(){
         val queue = Volley.newRequestQueue(this)
         val url = "https://rickandmortyapi.com/api/character"
-        val jsonObject = JsonObjectRequest(
-            Request.Method.GET,url,null,
-            { respuesta->
+        val jsonObject = JsonObjectRequest(Request.Method.GET,url,null,
+            {respuesta->
                 val newjson =respuesta.getJSONArray("results")
                 for (i in 0..newjson.length()-1) {
                     val newobj = newjson.getJSONObject(i)

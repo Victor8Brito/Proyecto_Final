@@ -25,7 +25,7 @@
             android:name=".Practica"
             android:exported="false" />
         <activity
-            android:name=".Retrofit"
+            android:name=".retrofit.Retrofit"
             android:exported="false" />
         <activity
             android:name=".RecyclerView"

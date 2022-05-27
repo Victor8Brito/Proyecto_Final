@@ -46,7 +46,7 @@
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="  Victor Brito"
+                    android:text="Panfilo"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
