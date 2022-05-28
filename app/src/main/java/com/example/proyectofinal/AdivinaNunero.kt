@@ -1,7 +1,5 @@
 package com.example.proyectofinal
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.proyectofinal.adivinar.Juego
 
 class AdivinaNunero : Fragment() {
     lateinit var b_iniciar: Button
@@ -26,7 +23,7 @@ class AdivinaNunero : Fragment() {
 
         b_home1 = vista.findViewById(R.id.btnHome1)
         b_home1.setOnClickListener {
-            findNavController().navigate(R.id.action_adivinaNunero_to_pantalla_principal)
+            findNavController().navigate(R.id.action_adivinaNunero_to_pantalla_Principal)
         }
         return vista
     }

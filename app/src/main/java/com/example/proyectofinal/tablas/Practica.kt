@@ -1,6 +1,5 @@
 package com.example.proyectofinal.tablas
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.proyectofinal.R
 import kotlin.random.Random
@@ -42,14 +43,10 @@ class Practica : Fragment() {
             if(strRespuesta.equals("")){
                 Toast.makeText(activity,"Dejaste el campo vacío", Toast.LENGTH_LONG).show()
             }else{
-                respuestaCorrecta= producto==strRespuesta.toInt()
+                respuestaCorrecta=producto==strRespuesta.toInt()
+                val bundle = bundleOf("amount" to respuestaCorrecta)
                 generaMultiplicacion()
-                val bundle = Bundle()
-                bundle!!.getBoolean("respuesta", respuestaCorrecta)
-                val frag = ResultadoTablas()
-                frag.arguments = bundle
-                findNavController().navigate(R.id.action_practica_to_resultadoTablas)
-
+                findNavController().navigate(R.id.action_practica_to_resultadoTablas, bundle)
             }
         }
 

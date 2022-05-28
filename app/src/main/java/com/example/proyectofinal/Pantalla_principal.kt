@@ -1,6 +1,5 @@
 package com.example.proyectofinal
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,9 +20,8 @@ class Pantalla_principal : Fragment() {
         val vista = inflater.inflate(R.layout.activity_pantalla_principal, container, false)
         botonAdivinar = vista.findViewById(R.id.btnAdivinar)
         botonAdivinar.setOnClickListener {
-            findNavController().navigate(R.id.action_pantalla_principal_to_adivinaNunero)
+            findNavController().navigate(R.id.action_pantalla_Principal_to_adivinaNunero)
         }
-
         botonTablas = vista.findViewById(R.id.btnTablas)
         botonTablas.setOnClickListener {
             findNavController().navigate(R.id.action_pantalla_principal_to_tablasDeMultiplicar)

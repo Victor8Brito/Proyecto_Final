@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navegation"
-    app:startDestination="@id/pantalla_principal">
+    app:startDestination="@id/pantalla_Principal">
     <fragment
-        android:id="@+id/pantalla_principal"
+        android:id="@+id/pantalla_Principal"
         android:name="com.example.proyectofinal.Pantalla_principal"
         android:label="activity_pantalla_principal"
         tools:layout="@layout/activity_pantalla_principal" >
         <action
-            android:id="@+id/action_pantalla_principal_to_adivinaNunero"
+            android:id="@+id/action_pantalla_Principal_to_adivinaNunero"
             app:destination="@id/adivinaNunero" />
         <action
             android:id="@+id/action_pantalla_principal_to_tablasDeMultiplicar"
@@ -28,8 +28,8 @@
         android:label="activity_adivina_nunero"
         tools:layout="@layout/activity_adivina_nunero" >
         <action
-            android:id="@+id/action_adivinaNunero_to_pantalla_principal"
-            app:destination="@id/pantalla_principal" />
+            android:id="@+id/action_adivinaNunero_to_pantalla_Principal"
+            app:destination="@id/pantalla_Principal" />
         <action
             android:id="@+id/action_adivinaNunero_to_juego"
             app:destination="@id/juego" />
@@ -49,7 +49,7 @@
         android:label="TablasDeMultiplicar" >
         <action
             android:id="@+id/action_tablasDeMultiplicar_to_pantalla_principal"
-            app:destination="@id/pantalla_principal" />
+            app:destination="@id/pantalla_Principal" />
         <action
             android:id="@+id/action_tablasDeMultiplicar_to_practica"
             app:destination="@id/practica" />
@@ -82,7 +82,7 @@
         tools:layout="@layout/activity_retrofit" >
         <action
             android:id="@+id/action_retrofit_to_pantalla_principal"
-            app:destination="@id/pantalla_principal" />
+            app:destination="@id/pantalla_Principal" />
     </fragment>
     <fragment
         android:id="@+id/recyclerView"
@@ -91,6 +91,6 @@
         tools:layout="@layout/activity_recycler_view" >
         <action
             android:id="@+id/action_recyclerView_to_pantalla_principal"
-            app:destination="@id/pantalla_principal" />
+            app:destination="@id/pantalla_Principal" />
     </fragment>
 </navigation>

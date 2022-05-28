@@ -16,12 +16,6 @@
         android:theme="@style/Theme.ProyectoFinal"
         tools:targetApi="31">
         <activity
-            android:name=".Retrofit"
-            android:exported="false" />
-        <activity
-            android:name=".RecyclerView"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

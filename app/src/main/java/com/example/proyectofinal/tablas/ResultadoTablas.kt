@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.example.proyectofinal.R
-import android.content.Intent
 
 class ResultadoTablas : Fragment() {
     lateinit var  animView: LottieAnimationView
@@ -24,11 +23,9 @@ class ResultadoTablas : Fragment() {
         btnRegresarAMultiplicacion.setOnClickListener{
             findNavController().navigate(R.id.action_resultadoTablas_to_practica)
         }
-
         animView = vista.findViewById(R.id.animation_view)
-
-        val extras = arguments?.getBoolean("respuesta")
-        if (extras == true){
+        val result = arguments?.getBoolean("amount")
+        if (result==true){
             animView.setAnimation(R.raw.success)
         }else{
             animView.setAnimation(R.raw.wrongnotif)
