@@ -47,7 +47,7 @@
 
                     <TextView
                         android:id="@+id/Instruc"
-                        android:layout_width="268dp"
+                        android:layout_width="262dp"
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="Dentro de una pokeball se encuentra uno de los pokemon que estan representados por un número del 1 al 10, ¿Cuál es ese pokemon? \n Preciona el boton para iniciar"
@@ -61,14 +61,14 @@
 
                         <ImageView
                             android:id="@+id/imageView"
-                            android:layout_width="wrap_content"
+                            android:layout_width="131dp"
                             android:layout_height="166dp"
                             android:layout_weight="1"
                             app:srcCompat="@drawable/red" />
 
                         <ImageView
                             android:id="@+id/imageView14"
-                            android:layout_width="match_parent"
+                            android:layout_width="131dp"
                             android:layout_height="96dp"
                             android:layout_weight="1"
                             app:srcCompat="@drawable/pikachu" />
@@ -91,8 +91,8 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
         <androidx.cardview.widget.CardView
-            android:layout_width="412dp"
-            android:layout_height="253dp"
+            android:layout_width="387dp"
+            android:layout_height="255dp"
             android:layout_marginTop="40dp"
             app:cardBackgroundColor="#CDDC39"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -113,12 +113,13 @@
             android:id="@+id/btnHome1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="16dp"
             android:text="Regresar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.839"
+            app:layout_constraintHorizontal_bias="0.053"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/black" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

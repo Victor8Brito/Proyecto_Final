@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/dogf"
     tools:context=".Retrofit">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,29 +16,33 @@
             android:id="@+id/SearchDog"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="600dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.158" />
+            app:layout_constraintStart_toStartOf="parent">
+
+        </androidx.appcompat.widget.SearchView>
 
         <androidx.recyclerview.widget.RecyclerView
-          android:id="@+id/rvDog"
-          android:layout_width="0dp"
-          android:layout_height="0dp"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/SearchDog" />
+            android:id="@+id/rvDog"
+            android:layout_width="407dp"
+            android:layout_height="595dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SearchDog"
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/btnhome3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="148dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#EF070E"
             android:text="Regresar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.892"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
