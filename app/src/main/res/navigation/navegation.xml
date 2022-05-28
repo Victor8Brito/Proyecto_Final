@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_pantalla_principal_to_tablasDeMultiplicar"
             app:destination="@id/tablasDeMultiplicar" />
+        <action
+            android:id="@+id/action_pantalla_principal_to_retrofit"
+            app:destination="@id/retrofit" />
     </fragment>
     <fragment
         android:id="@+id/adivinaNunero"
@@ -68,5 +71,14 @@
         <action
             android:id="@+id/action_resultadoTablas_to_practica"
             app:destination="@id/practica" />
+    </fragment>
+    <fragment
+        android:id="@+id/retrofit"
+        android:name="com.example.proyectofinal.Retrofit"
+        android:label="activity_retrofit"
+        tools:layout="@layout/activity_retrofit" >
+        <action
+            android:id="@+id/action_retrofit_to_pantalla_principal"
+            app:destination="@id/pantalla_principal" />
     </fragment>
 </navigation>

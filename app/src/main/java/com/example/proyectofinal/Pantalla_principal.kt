@@ -28,6 +28,10 @@ class Pantalla_principal : Fragment() {
         botonTablas.setOnClickListener {
             findNavController().navigate(R.id.action_pantalla_principal_to_tablasDeMultiplicar)
         }
+        botonRetrofit = vista.findViewById(R.id.btnRetrofit)
+        botonRetrofit.setOnClickListener {
+            findNavController().navigate(R.id.action_pantalla_principal_to_retrofit)
+        }
         return vista
     }
 }
