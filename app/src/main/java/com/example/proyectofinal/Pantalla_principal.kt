@@ -32,6 +32,10 @@ class Pantalla_principal : Fragment() {
         botonRetrofit.setOnClickListener {
             findNavController().navigate(R.id.action_pantalla_principal_to_retrofit)
         }
+        botonRecycler =vista.findViewById(R.id.btnRickMorty)
+        botonRecycler.setOnClickListener {
+            findNavController().navigate(R.id.action_pantalla_principal_to_recyclerView)
+        }
         return vista
     }
 }

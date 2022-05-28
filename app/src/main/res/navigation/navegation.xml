@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_pantalla_principal_to_retrofit"
             app:destination="@id/retrofit" />
+        <action
+            android:id="@+id/action_pantalla_principal_to_recyclerView"
+            app:destination="@id/recyclerView" />
     </fragment>
     <fragment
         android:id="@+id/adivinaNunero"
@@ -79,6 +82,15 @@
         tools:layout="@layout/activity_retrofit" >
         <action
             android:id="@+id/action_retrofit_to_pantalla_principal"
+            app:destination="@id/pantalla_principal" />
+    </fragment>
+    <fragment
+        android:id="@+id/recyclerView"
+        android:name="com.example.proyectofinal.RecyclerView"
+        android:label="activity_recycler_view"
+        tools:layout="@layout/activity_recycler_view" >
+        <action
+            android:id="@+id/action_recyclerView_to_pantalla_principal"
             app:destination="@id/pantalla_principal" />
     </fragment>
 </navigation>
