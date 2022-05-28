@@ -1,33 +1,38 @@
 package com.example.proyectofinal.tablas
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.example.proyectofinal.R
+import android.content.Intent
 
-class ResultadoTablas : AppCompatActivity() {
+class ResultadoTablas : Fragment() {
     lateinit var  animView: LottieAnimationView
     lateinit var  btnRegresarAMultiplicacion: Button
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_resultado_tablas)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val vista = inflater.inflate(R.layout.activity_resultado_tablas, container, false)
 
-        btnRegresarAMultiplicacion= findViewById(R.id.btnRegresar)
+        btnRegresarAMultiplicacion= vista.findViewById(R.id.btnRegresar)
         btnRegresarAMultiplicacion.setOnClickListener{
-            val intentMultiplicacion= Intent(this,Practica::class.java)
-            startActivity(intentMultiplicacion)
+            findNavController().navigate(R.id.action_resultadoTablas_to_practica)
         }
 
-        animView = findViewById(R.id.animation_view)
+        animView = vista.findViewById(R.id.animation_view)
 
-        val extras = intent.extras
-        val respuestaCorrecta = extras!!.getBoolean("respuesta")
-        if (respuestaCorrecta){
+        val extras = arguments?.getBoolean("respuesta")
+        if (extras == true){
             animView.setAnimation(R.raw.success)
         }else{
             animView.setAnimation(R.raw.wrongnotif)
         }
+        return vista
     }
 }

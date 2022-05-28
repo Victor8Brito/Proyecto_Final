@@ -1,17 +1,20 @@
 package com.example.proyectofinal.tablas
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.proyectofinal.R
-import com.example.proyectofinal.TablasDeMultiplicar
 import kotlin.random.Random
 
-class Practica : AppCompatActivity() {
+class Practica : Fragment() {
     lateinit var tvFactor1: TextView
     lateinit var tvFactor2: TextView
     lateinit var etRespuesta: EditText
@@ -22,39 +25,43 @@ class Practica : AppCompatActivity() {
     var producto:Int=0
     var respuestaCorrecta=false
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_practica)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val vista = inflater.inflate(R.layout.activity_practica, container, false)
+        tvFactor1=vista.findViewById(R.id.tvFactor1)
+        tvFactor2=vista.findViewById(R.id.tvFactor2)
+        etRespuesta=vista.findViewById(R.id.etRespuesta)
+        btnVerificar=vista.findViewById(R.id.btnVerificar)
         initUI()
+
 
         btnVerificar.setOnClickListener{
             val strRespuesta= etRespuesta.text.toString()
             if(strRespuesta.equals("")){
-                Toast.makeText(this,"Dejaste el campo vacío", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity,"Dejaste el campo vacío", Toast.LENGTH_LONG).show()
             }else{
                 respuestaCorrecta= producto==strRespuesta.toInt()
                 generaMultiplicacion()
-                val mostrarResultado = Intent(this,ResultadoTablas::class.java)
-                mostrarResultado.putExtra("respuesta",respuestaCorrecta)
-                startActivity(mostrarResultado)
+                val bundle = Bundle()
+                bundle!!.getBoolean("respuesta", respuestaCorrecta)
+                val frag = ResultadoTablas()
+                frag.arguments = bundle
+                findNavController().navigate(R.id.action_practica_to_resultadoTablas)
+
             }
         }
 
-        btnRegresarIni= findViewById(R.id.btnRegresarInicio)
+        btnRegresarIni= vista.findViewById(R.id.btnRegresarInicio)
         btnRegresarIni.setOnClickListener{
-            val intentMultiplicacion= Intent(this,TablasDeMultiplicar::class.java)
-            startActivity(intentMultiplicacion)
+            findNavController().navigate(R.id.action_practica_to_tablasDeMultiplicar)
         }
+        return vista
     }
 
     fun initUI(){
-        tvFactor1=findViewById(R.id.tvFactor1)
-        tvFactor2=findViewById(R.id.tvFactor2)
-        etRespuesta=findViewById(R.id.etRespuesta)
-        btnVerificar=findViewById(R.id.btnVerificar)
         generaMultiplicacion()
-
-
     }
 
     fun generaMultiplicacion(){

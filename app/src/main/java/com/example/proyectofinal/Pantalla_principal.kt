@@ -23,6 +23,11 @@ class Pantalla_principal : Fragment() {
         botonAdivinar.setOnClickListener {
             findNavController().navigate(R.id.action_pantalla_principal_to_adivinaNunero)
         }
+
+        botonTablas = vista.findViewById(R.id.btnTablas)
+        botonTablas.setOnClickListener {
+            findNavController().navigate(R.id.action_pantalla_principal_to_tablasDeMultiplicar)
+        }
         return vista
     }
 }

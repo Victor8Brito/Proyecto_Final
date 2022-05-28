@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_pantalla_principal_to_adivinaNunero"
             app:destination="@id/adivinaNunero" />
+        <action
+            android:id="@+id/action_pantalla_principal_to_tablasDeMultiplicar"
+            app:destination="@id/tablasDeMultiplicar" />
     </fragment>
     <fragment
         android:id="@+id/adivinaNunero"
@@ -33,5 +36,37 @@
         <action
             android:id="@+id/action_juego_to_adivinaNunero"
             app:destination="@id/adivinaNunero" />
+    </fragment>
+    <fragment
+        android:id="@+id/tablasDeMultiplicar"
+        android:name="com.example.proyectofinal.TablasDeMultiplicar"
+        android:label="TablasDeMultiplicar" >
+        <action
+            android:id="@+id/action_tablasDeMultiplicar_to_pantalla_principal"
+            app:destination="@id/pantalla_principal" />
+        <action
+            android:id="@+id/action_tablasDeMultiplicar_to_practica"
+            app:destination="@id/practica" />
+    </fragment>
+    <fragment
+        android:id="@+id/practica"
+        android:name="com.example.proyectofinal.tablas.Practica"
+        android:label="activity_practica"
+        tools:layout="@layout/activity_practica" >
+        <action
+            android:id="@+id/action_practica_to_tablasDeMultiplicar"
+            app:destination="@id/tablasDeMultiplicar" />
+        <action
+            android:id="@+id/action_practica_to_resultadoTablas"
+            app:destination="@id/resultadoTablas" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultadoTablas"
+        android:name="com.example.proyectofinal.tablas.ResultadoTablas"
+        android:label="activity_resultado_tablas"
+        tools:layout="@layout/activity_resultado_tablas" >
+        <action
+            android:id="@+id/action_resultadoTablas_to_practica"
+            app:destination="@id/practica" />
     </fragment>
 </navigation>
