@@ -17,6 +17,7 @@
             android:id="@+id/SearchDog"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="#63EDE9E9"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -28,14 +29,13 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDog"
-            android:layout_width="410dp"
-            android:layout_height="614dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SearchDog"
-            app:layout_constraintVertical_bias="0.2" />
+            app:layout_constraintTop_toBottomOf="@+id/SearchDog" />
 
         <Button
             android:id="@+id/btnhome3"
