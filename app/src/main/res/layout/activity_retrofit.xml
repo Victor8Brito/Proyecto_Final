@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dogf"
+
     tools:context=".Retrofit">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/viewRoot"
+        android:background="@drawable/dogf"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -16,23 +17,25 @@
             android:id="@+id/SearchDog"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="600dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnhome3"
+            app:layout_constraintVertical_bias="0.017">
 
         </androidx.appcompat.widget.SearchView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDog"
-            android:layout_width="407dp"
-            android:layout_height="595dp"
+            android:layout_width="410dp"
+            android:layout_height="614dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/SearchDog"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.2" />
 
         <Button
             android:id="@+id/btnhome3"
